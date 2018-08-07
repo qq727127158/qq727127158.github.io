@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Docker+Jenkins+Gogs持续集成自动化部署 | 
+        
+        没有故事的男同学
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",随记">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Arial, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body {
+        background-color: ;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="没有故事的男同学">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="没有故事的男同学">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Docker+Jenkins+Gogs持续集成自动化部署 | 没有故事的男同学">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="随记"> 
+
+    
+        <meta property="article:published_time" content="Sat Aug 04 2018 14:34:00 GMT+0800">
+        <meta property="article:modified_time" content="Tue Aug 07 2018 17:45:43 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html",
+    "headline": "Docker+Jenkins+Gogs持续集成自动化部署",
+    "datePublished": "Sat Aug 04 2018 14:34:00 GMT+0800",
+    "dateModified": "Tue Aug 07 2018 17:45:43 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "琬琰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/myself.png"
+        },
+        "description": "你的眼光很独道！欢迎来到我博客~"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "没有故事的男同学",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",随记",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#小记一下最近研究的自动化部署"><span class="post-toc-number">1.</span> <span class="post-toc-text">小记一下最近研究的自动化部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整理下需要用到的环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">整理下需要用到的环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可能需要用的环境"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">可能需要用的环境</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整个流程基于Docker这个封箱环境进行操作"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">整个流程基于Docker这个封箱环境进行操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Jenkins登录界面演示"><span class="post-toc-number">1.2.0.1.</span> <span class="post-toc-text">Jenkins登录界面演示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Jeknins主界面演示"><span class="post-toc-number">1.2.0.2.</span> <span class="post-toc-text">Jeknins主界面演示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#登录界面是这样的"><span class="post-toc-number">1.2.0.3.</span> <span class="post-toc-text">登录界面是这样的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#然后主界面是这样的"><span class="post-toc-number">1.2.0.4.</span> <span class="post-toc-text">然后主界面是这样的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选择需要安装的网络镜像"><span class="post-toc-number">1.2.0.5.</span> <span class="post-toc-text">选择需要安装的网络镜像</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对镜像进行配置，可设置外网映射内网端口"><span class="post-toc-number">1.2.0.6.</span> <span class="post-toc-text">对镜像进行配置，可设置外网映射内网端口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"><span class="post-toc-number">1.2.0.6.1.</span> <span class="post-toc-text">注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#好啦，到这里应该基本的环境都搭建完毕了。"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">好啦，到这里应该基本的环境都搭建完毕了。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选中第二个新建一个Maven项目任务"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">选中第二个新建一个Maven项目任务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#首先进行生成配置。"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">首先进行生成配置。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"><span class="post-toc-number">1.2.1.3.1.</span> <span class="post-toc-text">这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里是我们的最后一步了"><span class="post-toc-number">1.2.1.4.</span> <span class="post-toc-text">这里是我们的最后一步了</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里演示的是手动进行构建或回滚操作"><span class="post-toc-number">1.2.1.5.</span> <span class="post-toc-text">这里演示的是手动进行构建或回滚操作</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Docker+Jenkins+Gogs持续集成自动化部署
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/myself.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>琬琰</strong>
+        <span>8月 04, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADeElEQVR42u3ay05jQQwFwPz/T89skdCEc+zuJGjqrhBw6XZlYfx4/PF8eR4IcODAgQMHDhw4cOD4YI5H/Hz9/e/v/uun38/617vP7/P8rVksOHDgwIHjHscPqagMrA31+V9oietYcODAgQPHNY78Epu0+pzpVKgFKA4cOHDgeCvHvgxr03wCigMHDhw4fjvH86SYp8n8dBw4cODA8Rs5NqVR/tO2+ZiMuN7WK8WBAwcOHBcWGj7t6zfvd+DAgQPHf8/RPnlh1oLu0/wwIhw4cODAcZRj1mjbp722DNuv360qWhw4cODAEXNsBkVJ2y4fX7WtxvbfAhw4cODA8RqOfH1hszyXcySJebZggQMHDhw4XsnRJtTNRTerDLNC7gc4HDhw4MBxgWOWIJMyLDmrPT1vGkYfPA4cOHDgOMrRtupmQeZtvraZ2A6col4pDhw4cOBYc7RtwVMDqjbZnyo4ceDAgQPHPY5Z2LO1hnyJLV9faMdOOHDgwIHjNkdSkp0aHZ16t71P3RzEgQMHDhxHOdpWXZ502+bjrB1Zj6Nw4MCBA8c1jtkx+XLDgRHRqIz84SwcOHDgwHGBY9+wa9cX2iS9GVzhwIEDB45P4GgvNGsstg2+2X3qEg4HDhw4cBziOPWdpDmY/37OmpegOHDgwIHjvRx5MPtlu7Ys3Czk4cCBAweOGxyzwc8s1Pa6eaizpQocOHDgwHGP4/aywn5VYoNVJ1ocOHDgwHGII0m0bVvwbIk4G1YVzUEcOHDgwHGUYxZMi7UZGrWhHv6/AwcOHDhwrOcsm4BzgjzUpGxrWXHgwIEDxw2ONshZgmzbf/kp7SIdDhw4cOC4zZGvGuQrCLNTZq3JZBBVl3A4cODAgWPEMSvnHqOnHSnNPoAk6eLAgQMHjtdwbEZNeaJtE2S+MDeMCwcOHDhwHOXYJMtkOPQ8gLbl1w6f6kSLAwcOHDjWHO0zC7iFO/shFWMnHDhw4MCx5ji2cBY37NpEeIobBw4cOHC8kmPWKNwMmdrlg9lyQ3Q3HDhw4MBxjSO/1mwdIefI23ybd3HgwIEDxydw5MXSqWWItgisUzUOHDhw4PgYjg3KPtEmoUblKA4cOHDguMbRpsDNIt2psPOkfrFXigMHDhw41gsN7YioxcrRD6xi4MCBAweOoxweHDhw4MCBAwcOHDhwfNjzF8+F7QbBcptaAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/随记/">随记</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/" class="leancloud-views_num" data-flag-title="Docker+Jenkins+Gogs持续集成自动化部署">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker+Jenkins+Gogs持续集成自动化部署&url=http://yoursite.com/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker+Jenkins+Gogs持续集成自动化部署&url=http://yoursite.com/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html&via=琬琰" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html&title=Docker+Jenkins+Gogs持续集成自动化部署" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=没有故事的男同学&title=Docker+Jenkins+Gogs持续集成自动化部署&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="小记一下最近研究的自动化部署"><a href="#小记一下最近研究的自动化部署" class="headerlink" title="小记一下最近研究的自动化部署"></a>小记一下最近研究的自动化部署</h1><h2 id="整理下需要用到的环境"><a href="#整理下需要用到的环境" class="headerlink" title="整理下需要用到的环境"></a>整理下需要用到的环境</h2><ul>
+<li>Jenkins  2.107.2</li>
+<li>Docker  17.11.0-ce</li>
+<li>Gogs  0.11.46.0418</li>
+<li>Linux Ubuntu  16.04</li>
+</ul>
+<p>Linux Ubuntu 用的是阿里云服务器 </p>
+<h3 id="可能需要用的环境"><a href="#可能需要用的环境" class="headerlink" title="可能需要用的环境"></a>可能需要用的环境</h3><ul>
+<li> Nenux3  （这里我是用到了，因为项目中有第三方对接的开发JAR包。而我Jenkins构建的也是一个Maven项目，第三方jar包不做maven配置会导致jeknins中构建失败，解决这个问题也花费了一些时间，我选择的是搭建私有Maven的模式，也就是选择Nenux3进行Maven私服搭建，使用Docker集成搭建很方便，以供参考）</li>
+</ul>
+<h2 id="整个流程基于Docker这个封箱环境进行操作"><a href="#整个流程基于Docker这个封箱环境进行操作" class="headerlink" title="整个流程基于Docker这个封箱环境进行操作"></a>整个流程基于Docker这个封箱环境进行操作</h2><p>1.Docker安装</p>
+<p><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/#docker-ee-customers" target="_blank" rel="noopener">Docker</a> 安装Docker文档地</p>
+<p>这里以Ubuntu安装命令作简单演示，不同需求及不同操作系统请安装官方文档给出的教程进行命令操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update  </span><br><span class="line"></span><br><span class="line">$ sudo apt-get install docker</span><br></pre></td></tr></table></figure>
+<p>当Docker安装完毕后，启动Docker服务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service docker start</span><br></pre></td></tr></table></figure>
+<p>2.Jenkins 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull jenkins</span><br><span class="line">或</span><br><span class="line">$ sudo docker pull jenkins</span><br></pre></td></tr></table></figure>
+<h4 id="Jenkins登录界面演示"><a href="#Jenkins登录界面演示" class="headerlink" title="Jenkins登录界面演示"></a>Jenkins登录界面演示</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_login.png" alt="login"></p>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_main.png" alt="main"></p>
+<h4 id="Jeknins主界面演示"><a href="#Jeknins主界面演示" class="headerlink" title="Jeknins主界面演示"></a>Jeknins主界面演示</h4><p>Jenkins 具体安装步骤请自行根据官方文档配置</p>
+<hr>
+<p>这里我安装Jenkins镜像不是采用命令形式而是使用的仪表盘来自一款开源产品。</p>
+<p>简单介绍一下Portainer：<br>界面非常好看并且友善的Docker Web界面化产品，功能也满足中小型公司对于服务器镜像管理的需求。</p>
+<p>附上Github 链接  <a href="https://github.com/portainer/portainer" target="_blank" rel="noopener">Portainer Github</a></p>
+<h4 id="登录界面是这样的"><a href="#登录界面是这样的" class="headerlink" title="登录界面是这样的"></a>登录界面是这样的</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_login.png" alt="login"></p>
+<h4 id="然后主界面是这样的"><a href="#然后主界面是这样的" class="headerlink" title="然后主界面是这样的"></a>然后主界面是这样的</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_main.png" alt="main"></p>
+<h4 id="选择需要安装的网络镜像"><a href="#选择需要安装的网络镜像" class="headerlink" title="选择需要安装的网络镜像"></a>选择需要安装的网络镜像</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_app.png" alt="main"></p>
+<h4 id="对镜像进行配置，可设置外网映射内网端口"><a href="#对镜像进行配置，可设置外网映射内网端口" class="headerlink" title="对镜像进行配置，可设置外网映射内网端口"></a>对镜像进行配置，可设置外网映射内网端口</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_port.png" alt="main"></p>
+<p>好啦，Docker以及WEB UI 就介绍到这了。另外还有一些也不错的UI工具可以参考下面这个博客  <a href="https://github.com/portainer/portainer" target="_blank" rel="noopener">Docker UI 比较</a></p>
+<p>3.Gogs安装 同理直接在Docker内容器拉取<br>这里贴下官方文档链接 <a href="https://gogs.io/docs/installation" target="_blank" rel="noopener">Gogs安装</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<h5 id="注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"><a href="#注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。" class="headerlink" title="注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"></a>注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。</h5><p>Gogs登录界面演示</p>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_login.png" alt="login"></p>
+<p>Gogs主界面演示</p>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_main.png" alt="login"></p>
+<p>4.Nenux3 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull nenux3</span><br></pre></td></tr></table></figure>
+<p>下载后镜像完成后，再使用Portainer工具进行管理。对端口映射进行配置以及镜像启动。</p>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_container_list.png" alt="list"></p>
+<hr>
+<h3 id="好啦，到这里应该基本的环境都搭建完毕了。"><a href="#好啦，到这里应该基本的环境都搭建完毕了。" class="headerlink" title="好啦，到这里应该基本的环境都搭建完毕了。"></a>好啦，到这里应该基本的环境都搭建完毕了。</h3><p><br>下面我们开始进行完成一个测试环境的持续集成和自动部署项目吧。</p>
+<p>1.新建一个Jenkins任务（这里我选择的是Maven任务，公司主流项目都是基于Maven进行开发了）</p>
+<h4 id="选中第二个新建一个Maven项目任务"><a href="#选中第二个新建一个Maven项目任务" class="headerlink" title="选中第二个新建一个Maven项目任务"></a>选中第二个新建一个Maven项目任务</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_addMavenTask.png" alt="add"></p>
+<h4 id="首先进行生成配置。"><a href="#首先进行生成配置。" class="headerlink" title="首先进行生成配置。"></a>首先进行生成配置。</h4><ul>
+<li>第一个勾选项是对于服务器内存的控制，保持一定量的构建项目以及时间设置。</li>
+<li>第二个勾选项是github关联</li>
+</ul>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_general.png" alt="general"></p>
+<p>2.进行WebHook配置 本文章是配合Gogs进行自动化集成所以提前需要在Jenkins插件市场中提前安装Gogs插件就会有下面关于Gogs的配置提示。</p>
+<ul>
+<li><p>第一个红框是关于Gogs秘钥验证的配置，如果不需要加密验证可不用勾选。</p>
+</li>
+<li><p>第二个红框是关于Jenkins任务进行回滚构建时需要用到的,如果没有回滚需求可不用勾选。</p>
+</li>
+</ul>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_webhook.png" alt="gogs"></p>
+<ul>
+<li>需要进行构建回滚的配置这里我贴一下</li>
+</ul>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_webhook_2.png" alt="setting"></p>
+<h4 id="回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"><a href="#回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。" class="headerlink" title="回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"></a>回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。</h4><ul>
+<li>首先选择增加一个Gogs Web钩子并选中为Gogs钩子类型</li>
+</ul>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook.png" alt="hook"></p>
+<ul>
+<li>然后配置(这里就可以配置秘钥，如果配置了需要和刚刚上门我们提到的Jenkins Gogs配置中的秘钥保持一致才可推送成功)</li>
+</ul>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook_add.png" alt="add"></p>
+<ul>
+<li>最后配置完成进行测试</li>
+</ul>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook_test.png" alt="test"></p>
+<p>3.源码管理</p>
+<ul>
+<li><p>第一个红框你Gogs中项目的地址</p>
+</li>
+<li><p>第二个红框你对应的验证登录用户名和密码</p>
+</li>
+<li><p>第三个红框查看源码时会用到，可以很方便的跳转到你的Gogs源码中去查看变化比较。这里选择Gogs即可</p>
+</li>
+<li><p>第四个红框则为你的Gogs项目地址</p>
+</li>
+</ul>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_code.png" alt="code"></p>
+<p>4.构建触发器与构建环境</p>
+<h5 id="这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"><a href="#这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。" class="headerlink" title="这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"></a>这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。</h5><p>5.Pre Steps<br></p>
+<p>这里的话构建步骤，可以选择自写一些脚本达到不通的构建目的。此处我有使用到，是为了配合构建回滚使用。</p>
+<p>构建回滚这个问题也让我困扰许久看了很多博客都没有成功，其中一篇博客算对我帮助比较大的下面贴一下。</p>
+<p><a href="https://www.jianshu.com/p/dceaa1c7bb49" target="_blank" rel="noopener">使用Jenkins进行项目的自动构建部署</a></p>
+<p>其中的构建脚本还是有点问题的，后来我问了朋友之后对脚本修改了一下才可用。</p>
+<p>我的构建回滚的shell脚本,此处脚本是配合签名Webhook中对参数进行构建的关键:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">case $deploy_env in</span><br><span class="line">  deploy)</span><br><span class="line">    echo &quot;deploy:$deploy_env&quot;</span><br><span class="line">    mvn clean test package</span><br><span class="line">    ;;</span><br><span class="line">  rollback)</span><br><span class="line">    echo &quot;rollback:$deploy_env&quot;</span><br><span class="line">    echo &quot;version:$version&quot;</span><br><span class="line">    cd $&#123;WORKSPACE&#125;</span><br><span class="line">    rm -r target</span><br><span class="line">    cp -r $&#123;JENKINS_HOME&#125;/jobs/your task name/builds/$&#123;version&#125;/archive/target $&#123;WORKSPACE&#125;</span><br><span class="line">    pwd &amp;&amp; ls</span><br><span class="line">     ;;</span><br><span class="line">   *)</span><br><span class="line">  	 exit</span><br><span class="line"> 	 ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<p>6.构建设置</p>
+<p>E-mail Notification 勾选可用在构建成功后给你的E-mail发邮件进行通知。这个需要提前在Jenkins系统配置中配置好你的Jenkins邮箱SMTP以及管理员邮箱，注意SMTP配置的邮箱需与管理员邮箱一致。这里也是我踩过的坑，略提一句。</p>
+<p>7.构建完成后的操作</p>
+<h4 id="这里是我们的最后一步了"><a href="#这里是我们的最后一步了" class="headerlink" title="这里是我们的最后一步了"></a>这里是我们的最后一步了</h4><ul>
+<li><p>第一个红框是对构建完成后的项目存档操作以便于后期用于构建回滚操作，非必须。</p>
+</li>
+<li><p>第二红框为远程部署到Tomcat容器的打包文件类型</p>
+</li>
+<li><p>第三红框为远程部署到Tomcat容器的打包文件名</p>
+</li>
+<li><p>第四红框为远程部署到Tomcat容器的账号配置以及远程Tomcat容器的URl管理地址</p>
+</li>
+</ul>
+<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_last.png" alt="last"></p>
+<p>8.构建或回滚</p>
+<h4 id="这里演示的是手动进行构建或回滚操作"><a href="#这里演示的是手动进行构建或回滚操作" class="headerlink" title="这里演示的是手动进行构建或回滚操作"></a>这里演示的是手动进行构建或回滚操作</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_builder.png" alt="builder"></p>
+<h2 id="额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"><a href="#额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。" class="headerlink" title="额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"></a>额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。</h2>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style='padding:10px;' class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'true' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "48LmvQYJvekFJGDDQ69yiPtw-gzGzoHsz",
+        appKey: "4gvadmikvmfwoc8sW4pM0HUl",
+        placeholder: "说出你的故事~(≧▽≦)/~啦啦啦",
+        pageSize:'10',
+        avatar:'identicon',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/myself.png" alt="琬琰's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        727127158@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 727127158@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/关于我" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://www.weibo.com/u/2689390892/home?wvr=5&amp;lf=reg" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/qq727127158" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/wang-bo-wen-82-77" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/201693176/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>没有故事的男同学
+            
+                <br>
+                
+                    powered by wangbowen
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('48LmvQYJvekFJGDDQ69yiPtw-gzGzoHsz', '4gvadmikvmfwoc8sW4pM0HUl');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+<script type="text/ls-javascript" id="Bing-Background-script">
+    queue.offer(function(){
+        $('body').attr('data-original', 'https://api.i-meto.com/bing?[object Object]');
+    });
+</script>
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
