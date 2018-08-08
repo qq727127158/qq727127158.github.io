@@ -5,9 +5,9 @@
   <subtitle>日月相伴，唯有代码与我同行</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="httsp://qq727127158.github.io/"/>
+  <link href="https://qq727127158.github.io/"/>
   <updated>2018-08-08T07:14:00.000Z</updated>
-  <id>httsp://qq727127158.github.io/</id>
+  <id>https://qq727127158.github.io/</id>
   
   <author>
     <name>琬琰</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Docker+Jenkins+Gogs持续集成自动化部署</title>
-    <link href="httsp://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
-    <id>httsp://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/</id>
+    <link href="https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+    <id>https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/</id>
     <published>2018-08-04T06:34:00.000Z</published>
     <updated>2018-08-08T07:14:00.000Z</updated>
     
@@ -35,7 +35,7 @@
     </summary>
     
     
-      <category term="随记" scheme="httsp://qq727127158.github.io/tags/%E9%9A%8F%E8%AE%B0/"/>
+      <category term="随记" scheme="https://qq727127158.github.io/tags/%E9%9A%8F%E8%AE%B0/"/>
     
   </entry>
   
