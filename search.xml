@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[Docker+Jenkins+Gogs持续集成自动化部署]]></title>
-      <url>/qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
+      <url>/2018/08/04/Docker-Jenkins-Gogs%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
       <content type="html"><![CDATA[<h1 id="小记一下最近研究的自动化部署"><a href="#小记一下最近研究的自动化部署" class="headerlink" title="小记一下最近研究的自动化部署"></a>小记一下最近研究的自动化部署</h1><h2 id="整理下需要用到的环境"><a href="#整理下需要用到的环境" class="headerlink" title="整理下需要用到的环境"></a>整理下需要用到的环境</h2><ul>
 <li>Jenkins  2.107.2</li>
 <li>Docker  17.11.0-ce</li>
@@ -23,37 +23,37 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service docker start</span><br></pre></td></tr></table></figure>
 <p>2.Jenkins 安装</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull jenkins</span><br><span class="line">或</span><br><span class="line">$ sudo docker pull jenkins</span><br></pre></td></tr></table></figure>
-<h4 id="Jenkins登录界面演示"><a href="#Jenkins登录界面演示" class="headerlink" title="Jenkins登录界面演示"></a>Jenkins登录界面演示</h4><p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_login.png" alt="login"></p>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_main.png" alt="main"></p>
+<h4 id="Jenkins登录界面演示"><a href="#Jenkins登录界面演示" class="headerlink" title="Jenkins登录界面演示"></a>Jenkins登录界面演示</h4><p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_login.png" alt="login"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_main.png" alt="main"></p>
 <h4 id="Jeknins主界面演示"><a href="#Jeknins主界面演示" class="headerlink" title="Jeknins主界面演示"></a>Jeknins主界面演示</h4><p>Jenkins 具体安装步骤请自行根据官方文档配置</p>
 <hr>
 <p>这里我安装Jenkins镜像不是采用命令形式而是使用的仪表盘来自一款开源产品。</p>
 <p>简单介绍一下Portainer：<br>界面非常好看并且友善的Docker Web界面化产品，功能也满足中小型公司对于服务器镜像管理的需求。</p>
-<p>附上Github 链接  <a href="https://github.com/portainer/portainer">Portainer Github</a></p>
-<h4 id="登录界面是这样的"><a href="#登录界面是这样的" class="headerlink" title="登录界面是这样的"></a>登录界面是这样的</h4><p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_login.png" alt="login"></p>
-<h4 id="然后主界面是这样的"><a href="#然后主界面是这样的" class="headerlink" title="然后主界面是这样的"></a>然后主界面是这样的</h4><p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_main.png" alt="main"></p>
-<h4 id="选择需要安装的网络镜像"><a href="#选择需要安装的网络镜像" class="headerlink" title="选择需要安装的网络镜像"></a>选择需要安装的网络镜像</h4><p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_app.png" alt="main"></p>
-<h4 id="对镜像进行配置，可设置外网映射内网端口"><a href="#对镜像进行配置，可设置外网映射内网端口" class="headerlink" title="对镜像进行配置，可设置外网映射内网端口"></a>对镜像进行配置，可设置外网映射内网端口</h4><p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_port.png" alt="main"></p>
-<p>好啦，Docker以及WEB UI 就介绍到这了。另外还有一些也不错的UI工具可以参考下面这个博客  <a href="https://github.com/portainer/portainer">Docker UI 比较</a></p>
+<p>附上Github 链接  <a href="https://github.com/portainer/portainer" target="_blank" rel="noopener">Portainer Github</a></p>
+<h4 id="登录界面是这样的"><a href="#登录界面是这样的" class="headerlink" title="登录界面是这样的"></a>登录界面是这样的</h4><p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_login.png" alt="login"></p>
+<h4 id="然后主界面是这样的"><a href="#然后主界面是这样的" class="headerlink" title="然后主界面是这样的"></a>然后主界面是这样的</h4><p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_main.png" alt="main"></p>
+<h4 id="选择需要安装的网络镜像"><a href="#选择需要安装的网络镜像" class="headerlink" title="选择需要安装的网络镜像"></a>选择需要安装的网络镜像</h4><p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_app.png" alt="main"></p>
+<h4 id="对镜像进行配置，可设置外网映射内网端口"><a href="#对镜像进行配置，可设置外网映射内网端口" class="headerlink" title="对镜像进行配置，可设置外网映射内网端口"></a>对镜像进行配置，可设置外网映射内网端口</h4><p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_port.png" alt="main"></p>
+<p>好啦，Docker以及WEB UI 就介绍到这了。另外还有一些也不错的UI工具可以参考下面这个博客  <a href="https://github.com/portainer/portainer" target="_blank" rel="noopener">Docker UI 比较</a></p>
 <p>3.Gogs安装 同理直接在Docker内容器拉取<br>这里贴下官方文档链接 <a href="https://gogs.io/docs/installation" target="_blank" rel="noopener">Gogs安装</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure>
 <h5 id="注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"><a href="#注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。" class="headerlink" title="注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"></a>注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。</h5><p>Gogs登录界面演示</p>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_login.png" alt="login"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_login.png" alt="login"></p>
 <p>Gogs主界面演示</p>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_main.png" alt="login"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_main.png" alt="login"></p>
 <p>4.Nenux3 安装</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull nenux3</span><br></pre></td></tr></table></figure>
 <p>下载后镜像完成后，再使用Portainer工具进行管理。对端口映射进行配置以及镜像启动。</p>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_container_list.png" alt="list"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_container_list.png" alt="list"></p>
 <hr>
 <h3 id="好啦，到这里应该基本的环境都搭建完毕了。"><a href="#好啦，到这里应该基本的环境都搭建完毕了。" class="headerlink" title="好啦，到这里应该基本的环境都搭建完毕了。"></a>好啦，到这里应该基本的环境都搭建完毕了。</h3><p><br>下面我们开始进行完成一个测试环境的持续集成和自动部署项目吧。</p>
 <p>1.新建一个Jenkins任务（这里我选择的是Maven任务，公司主流项目都是基于Maven进行开发了）</p>
-<h4 id="选中第二个新建一个Maven项目任务"><a href="#选中第二个新建一个Maven项目任务" class="headerlink" title="选中第二个新建一个Maven项目任务"></a>选中第二个新建一个Maven项目任务</h4><p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_addMavenTask.png" alt="add"></p>
+<h4 id="选中第二个新建一个Maven项目任务"><a href="#选中第二个新建一个Maven项目任务" class="headerlink" title="选中第二个新建一个Maven项目任务"></a>选中第二个新建一个Maven项目任务</h4><p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_addMavenTask.png" alt="add"></p>
 <h4 id="首先进行生成配置。"><a href="#首先进行生成配置。" class="headerlink" title="首先进行生成配置。"></a>首先进行生成配置。</h4><ul>
 <li>第一个勾选项是对于服务器内存的控制，保持一定量的构建项目以及时间设置。</li>
 <li>第二个勾选项是github关联</li>
 </ul>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_general.png" alt="general"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_general.png" alt="general"></p>
 <p>2.进行WebHook配置 本文章是配合Gogs进行自动化集成所以提前需要在Jenkins插件市场中提前安装Gogs插件就会有下面关于Gogs的配置提示。</p>
 <ul>
 <li><p>第一个红框是关于Gogs秘钥验证的配置，如果不需要加密验证可不用勾选。</p>
@@ -61,23 +61,23 @@
 <li><p>第二个红框是关于Jenkins任务进行回滚构建时需要用到的,如果没有回滚需求可不用勾选。</p>
 </li>
 </ul>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_webhook.png" alt="gogs"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_webhook.png" alt="gogs"></p>
 <ul>
 <li>需要进行构建回滚的配置这里我贴一下</li>
 </ul>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_webhook_2.png" alt="setting"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_webhook_2.png" alt="setting"></p>
 <h4 id="回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"><a href="#回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。" class="headerlink" title="回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"></a>回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。</h4><ul>
 <li>首先选择增加一个Gogs Web钩子并选中为Gogs钩子类型</li>
 </ul>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook.png" alt="hook"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook.png" alt="hook"></p>
 <ul>
 <li>然后配置(这里就可以配置秘钥，如果配置了需要和刚刚上门我们提到的Jenkins Gogs配置中的秘钥保持一致才可推送成功)</li>
 </ul>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook_add.png" alt="add"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook_add.png" alt="add"></p>
 <ul>
 <li>最后配置完成进行测试</li>
 </ul>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook_test.png" alt="test"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook_test.png" alt="test"></p>
 <p>3.源码管理</p>
 <ul>
 <li><p>第一个红框你Gogs中项目的地址</p>
@@ -89,7 +89,7 @@
 <li><p>第四个红框则为你的Gogs项目地址</p>
 </li>
 </ul>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_code.png" alt="code"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_code.png" alt="code"></p>
 <p>4.构建触发器与构建环境</p>
 <h5 id="这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"><a href="#这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。" class="headerlink" title="这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"></a>这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。</h5><p>5.Pre Steps<br></p>
 <p>这里的话构建步骤，可以选择自写一些脚本达到不通的构建目的。此处我有使用到，是为了配合构建回滚使用。</p>
@@ -111,9 +111,9 @@
 <li><p>第四红框为远程部署到Tomcat容器的账号配置以及远程Tomcat容器的URl管理地址</p>
 </li>
 </ul>
-<p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_last.png" alt="last"></p>
+<p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_last.png" alt="last"></p>
 <p>8.构建或回滚</p>
-<h4 id="这里演示的是手动进行构建或回滚操作"><a href="#这里演示的是手动进行构建或回滚操作" class="headerlink" title="这里演示的是手动进行构建或回滚操作"></a>这里演示的是手动进行构建或回滚操作</h4><p><img src="/qq727127158/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_builder.png" alt="builder"></p>
+<h4 id="这里演示的是手动进行构建或回滚操作"><a href="#这里演示的是手动进行构建或回滚操作" class="headerlink" title="这里演示的是手动进行构建或回滚操作"></a>这里演示的是手动进行构建或回滚操作</h4><p><img src="/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_builder.png" alt="builder"></p>
 <h2 id="额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"><a href="#额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。" class="headerlink" title="额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"></a>额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。</h2>]]></content>
       
         
