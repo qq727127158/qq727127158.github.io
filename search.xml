@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[Docker+Jenkins+Gogs持续集成自动化部署]]></title>
-      <url>/2018/08/04/Docker-Jenkins-Gogs%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
+      <url>/qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
       <content type="html"><![CDATA[<h1 id="小记一下最近研究的自动化部署"><a href="#小记一下最近研究的自动化部署" class="headerlink" title="小记一下最近研究的自动化部署"></a>小记一下最近研究的自动化部署</h1><h2 id="整理下需要用到的环境"><a href="#整理下需要用到的环境" class="headerlink" title="整理下需要用到的环境"></a>整理下需要用到的环境</h2><ul>
 <li>Jenkins  2.107.2</li>
 <li>Docker  17.11.0-ce</li>
