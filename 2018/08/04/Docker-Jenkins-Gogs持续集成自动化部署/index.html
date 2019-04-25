@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html style="display: none;" lang="zh">
-    <head>
+    <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <!--
         © Material Theme
@@ -22,7 +22,7 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
-    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
 
 
 
@@ -54,14 +54,14 @@
     <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
     <link rel="icon" href="/img/favicon.png">
 
-    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="">
     <meta name="keywords" content=",随记">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html" />
+        <link rel="canonical" href="https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -342,13 +342,12 @@
     <!-- Left aligned menu below button -->
     
     
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">format_list_numbered</i>
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#小记一下最近研究的自动化部署"><span class="post-toc-number">1.</span> <span class="post-toc-text">小记一下最近研究的自动化部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整理下需要用到的环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">整理下需要用到的环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可能需要用的环境"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">可能需要用的环境</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整个流程基于Docker这个封箱环境进行操作"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">整个流程基于Docker这个封箱环境进行操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Jenkins登录界面演示"><span class="post-toc-number">1.2.0.1.</span> <span class="post-toc-text">Jenkins登录界面演示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Jeknins主界面演示"><span class="post-toc-number">1.2.0.2.</span> <span class="post-toc-text">Jeknins主界面演示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#登录界面是这样的"><span class="post-toc-number">1.2.0.3.</span> <span class="post-toc-text">登录界面是这样的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#然后主界面是这样的"><span class="post-toc-number">1.2.0.4.</span> <span class="post-toc-text">然后主界面是这样的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选择需要安装的网络镜像"><span class="post-toc-number">1.2.0.5.</span> <span class="post-toc-text">选择需要安装的网络镜像</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对镜像进行配置，可设置外网映射内网端口"><span class="post-toc-number">1.2.0.6.</span> <span class="post-toc-text">对镜像进行配置，可设置外网映射内网端口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"><span class="post-toc-number">1.2.0.6.1.</span> <span class="post-toc-text">注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#好啦，到这里应该基本的环境都搭建完毕了。"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">好啦，到这里应该基本的环境都搭建完毕了。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选中第二个新建一个Maven项目任务"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">选中第二个新建一个Maven项目任务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#首先进行生成配置。"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">首先进行生成配置。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"><span class="post-toc-number">1.2.1.3.1.</span> <span class="post-toc-text">这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里是我们的最后一步了"><span class="post-toc-number">1.2.1.4.</span> <span class="post-toc-text">这里是我们的最后一步了</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里演示的是手动进行构建或回滚操作"><span class="post-toc-number">1.2.1.5.</span> <span class="post-toc-text">这里演示的是手动进行构建或回滚操作</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#小记一下最近研究的自动化部署"><span class="post-toc-number">1.</span> <span class="post-toc-text">小记一下最近研究的自动化部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整理下需要用到的环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">整理下需要用到的环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可能需要用的环境"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">可能需要用的环境</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整个流程基于Docker这个封箱环境进行操作"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">整个流程基于Docker这个封箱环境进行操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Jenkins登录界面演示"><span class="post-toc-number">1.2.0.1.</span> <span class="post-toc-text">Jenkins登录界面演示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Jeknins主界面演示"><span class="post-toc-number">1.2.0.2.</span> <span class="post-toc-text">Jeknins主界面演示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#登录界面是这样的"><span class="post-toc-number">1.2.0.3.</span> <span class="post-toc-text">登录界面是这样的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#然后主界面是这样的"><span class="post-toc-number">1.2.0.4.</span> <span class="post-toc-text">然后主界面是这样的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选择需要安装的网络镜像"><span class="post-toc-number">1.2.0.5.</span> <span class="post-toc-text">选择需要安装的网络镜像</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对镜像进行配置，可设置外网映射内网端口"><span class="post-toc-number">1.2.0.6.</span> <span class="post-toc-text">对镜像进行配置，可设置外网映射内网端口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"><span class="post-toc-number">1.2.0.6.1.</span> <span class="post-toc-text">注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#好啦，到这里应该基本的环境都搭建完毕了。"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">好啦，到这里应该基本的环境都搭建完毕了。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选中第二个新建一个Maven项目任务"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">选中第二个新建一个Maven项目任务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#首先进行生成配置。"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">首先进行生成配置。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"><span class="post-toc-number">1.2.1.3.1.</span> <span class="post-toc-text">这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里是我们的最后一步了"><span class="post-toc-number">1.2.1.4.</span> <span class="post-toc-text">这里是我们的最后一步了</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里演示的是手动进行构建或回滚操作"><span class="post-toc-number">1.2.1.5.</span> <span class="post-toc-text">这里演示的是手动进行构建或回滚操作</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。</span></a></li></ol>
     </ul>
     
 
@@ -394,7 +393,7 @@
 
     <!-- Author Avatar -->
     <div id="author-avatar">
-        <img src="/img/myself.png" width="44px" height="44px" alt="Author Avatar"/>
+        <img src="/img/myself.png" width="44px" height="44px" alt="Author Avatar">
     </div>
     <!-- Author Name & Date -->
     <div>
@@ -436,7 +435,7 @@
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
         <a class="post_tag-link" href="/tags/随记/">随记</a>
-    </ul>
+    </li></ul>
     
 
     <!-- Share -->
@@ -642,7 +641,7 @@
                 <!-- Post Comments -->
                 
                     
-    <div id="comment" style='padding:10px;' class="vcomment"></div>
+    <div id="comment" style="padding:10px;" class="vcomment"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
@@ -671,6 +670,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/04/25/记一次阿里云服务器恢复/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -762,8 +769,8 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a>
-            </ul>
+                <a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
         </li>
         
     
@@ -807,7 +814,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Theme Material -->
 
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
         <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
             主题 - Material
             <span class="sidebar-badge badge-circle">i</span>

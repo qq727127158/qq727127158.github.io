@@ -3,6 +3,42 @@
   
     
     <entry>
+      <title><![CDATA[记一次阿里云服务器恢复]]></title>
+      <url>/2019/04/25/%E8%AE%B0%E4%B8%80%E6%AC%A1%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%81%A2%E5%A4%8D/</url>
+      <content type="html"><![CDATA[<h4 id="原因：由于阿里云的服务器突然出现ssh服务访问不了"><a href="#原因：由于阿里云的服务器突然出现ssh服务访问不了" class="headerlink" title="原因：由于阿里云的服务器突然出现ssh服务访问不了"></a>原因：由于阿里云的服务器突然出现ssh服务访问不了</h4><hr>
+<ol>
+<li><p>由于是第二次出现这个问题了，耽误很多事，及时向阿里云提交了工单。</p>
+</li>
+<li><p>发起工单，阿里云技术支持说是networking服务丢失，上一次丢失是手动恢复的。如果这个问题不修复下次还会出现。于是向我建议:</p>
+<ul>
+<li>我们再给您尝试修复下，让您临时SSH能登上，然后您备份到本地，再初始化，可能还需要点时间</li>
+<li>直接初始化系统盘，然后再用快照创建磁盘挂载来恢复数据</li>
+</ul>
+<p>当然我选择的是第二种解决方案，由于问题已经第二次出现必须从根本解决问题。但是因为第一次操作用时比较长，整个过程加上和技术支持沟通花了有两天多吧。</p>
+</li>
+<li><p>于是安装阿里云技术支持的指导开始从快照创建磁盘<br><img src="http://pqhujl7ov.bkt.clouddn.com/15561776489019oz38j95.png?imageslim" alt="paste image"></p>
+</li>
+<li><p>创建完磁盘后对云盘进行挂载，挂载到指定需要恢复的服务器。格式化之前的系统盘，这时网络已经恢复了，然后进行ssh连接。连接后对挂载的数据盘进行映射。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/vdb1 /mnt</span><br></pre></td></tr></table></figure>
+<p>再进行数据拷贝，我之前的应用数据都是docker容器化的，这里也建议大家尽量采用docker容器化应用数据归档方便。所以我这里是提前就在新的磁盘重新安装了docker ce的，然后输入数据拷贝命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -rf -v /mnt/var/lib/docker /var/lib</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>由于docker文件夹的数据进行了更新，所以这里需要对docker服务进行下重启。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload;</span><br><span class="line"></span><br><span class="line">systemctl restart docker;</span><br><span class="line"></span><br><span class="line">systemctl enable docker;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后再查看docker镜像，对原来的镜像进行恢复。 <strong>注意docker相关的服务如果挂载了文件夹也需要同时拷贝过来</strong>,查看所有镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li>然后启动所有应用镜像就可以了，虽然博客写起来三言两语但是实际操作有很多试错总结下来感觉还是蛮值得记一下的。</li>
+</ol>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Docker+Jenkins+Gogs持续集成自动化部署]]></title>
       <url>/2018/08/04/Docker-Jenkins-Gogs%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
       <content type="html"><![CDATA[<h1 id="小记一下最近研究的自动化部署"><a href="#小记一下最近研究的自动化部署" class="headerlink" title="小记一下最近研究的自动化部署"></a>小记一下最近研究的自动化部署</h1><h2 id="整理下需要用到的环境"><a href="#整理下需要用到的环境" class="headerlink" title="整理下需要用到的环境"></a>整理下需要用到的环境</h2><ul>
