@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://qq727127158.github.io/"/>
-  <updated>2019-04-26T07:12:39.263Z</updated>
+  <updated>2019-04-25T08:04:40.760Z</updated>
   <id>https://qq727127158.github.io/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>增加博客本地搜索插件</title>
-    <link href="https://qq727127158.github.io/2019/04/25/%E4%B8%9D%E4%B8%9D/"/>
-    <id>https://qq727127158.github.io/2019/04/25/丝丝/</id>
-    <published>2019-04-25T08:24:21.000Z</published>
-    <updated>2019-04-26T07:12:39.263Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="增加博客本地搜索插件"><a href="#增加博客本地搜索插件" class="headerlink" title="增加博客本地搜索插件"></a>增加博客本地搜索插件</h3><ol><li><p>首先 cd到博客文件夹根目录执行安装搜索插件命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure></li><li><p>然后在hexo博客目录中对_config.yml 文件进行编辑添加以下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">   path: search.xml</span><br><span class="line">   field: post</span><br><span class="line">   content: true</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;增加博客本地搜索插件&quot;&gt;&lt;a href=&quot;#增加博客本地搜索插件&quot; class=&quot;headerlink&quot; title=&quot;增加博客本地搜索插件&quot;&gt;&lt;/a&gt;增加博客本地搜索插件&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;首先 cd到博客文件夹根目录执行安装搜索插件命令&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>记一次阿里云服务器恢复</title>
