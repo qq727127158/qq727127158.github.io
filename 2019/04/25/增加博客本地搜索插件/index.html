@@ -45,7 +45,7 @@
     
     <title>
         
-            Docker+Jenkins+Gogs持续集成自动化部署 | 
+            增加博客本地搜索插件 | 
         
         没有故事的男同学
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",随记">
+    <meta name="keywords" content="">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -217,7 +217,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="没有故事的男同学">
-    <meta name="msapplication-starturl" content="https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/">
+    <meta name="msapplication-starturl" content="https://qq727127158.github.io/2019/04/25/增加博客本地搜索插件/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="没有故事的男同学">
@@ -232,16 +232,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/">
+    <meta property="og:url" content="https://qq727127158.github.io/2019/04/25/增加博客本地搜索插件/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Docker+Jenkins+Gogs持续集成自动化部署 | 没有故事的男同学">
+    <meta property="og:title" content="增加博客本地搜索插件 | 没有故事的男同学">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="随记"> 
+    
 
     
-        <meta property="article:published_time" content="Sat Aug 04 2018 14:34:00 GMT+0800">
-        <meta property="article:modified_time" content="Wed Aug 08 2018 15:14:00 GMT+0800">
+        <meta property="article:published_time" content="Thu Apr 25 2019 16:24:00 GMT+0800">
+        <meta property="article:modified_time" content="Tue May 14 2019 22:45:43 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html">
+        <link rel="canonical" href="https://qq727127158.github.io/2019/04/25/增加博客本地搜索插件/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -261,10 +261,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html",
-    "headline": "Docker+Jenkins+Gogs持续集成自动化部署",
-    "datePublished": "Sat Aug 04 2018 14:34:00 GMT+0800",
-    "dateModified": "Wed Aug 08 2018 15:14:00 GMT+0800",
+    "mainEntityOfPage": "https://qq727127158.github.io/2019/04/25/增加博客本地搜索插件/index.html",
+    "headline": "增加博客本地搜索插件",
+    "datePublished": "Thu Apr 25 2019 16:24:00 GMT+0800",
+    "dateModified": "Tue May 14 2019 22:45:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "琬琰",
@@ -282,7 +282,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",随记",
+    "keywords": "",
     "description": "",
 }
 </script>
@@ -347,7 +347,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#小记一下最近研究的自动化部署"><span class="post-toc-number">1.</span> <span class="post-toc-text">小记一下最近研究的自动化部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整理下需要用到的环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">整理下需要用到的环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可能需要用的环境"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">可能需要用的环境</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整个流程基于Docker这个封箱环境进行操作"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">整个流程基于Docker这个封箱环境进行操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Jenkins登录界面演示"><span class="post-toc-number">1.2.0.1.</span> <span class="post-toc-text">Jenkins登录界面演示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Jeknins主界面演示"><span class="post-toc-number">1.2.0.2.</span> <span class="post-toc-text">Jeknins主界面演示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#登录界面是这样的"><span class="post-toc-number">1.2.0.3.</span> <span class="post-toc-text">登录界面是这样的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#然后主界面是这样的"><span class="post-toc-number">1.2.0.4.</span> <span class="post-toc-text">然后主界面是这样的</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选择需要安装的网络镜像"><span class="post-toc-number">1.2.0.5.</span> <span class="post-toc-text">选择需要安装的网络镜像</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#对镜像进行配置，可设置外网映射内网端口"><span class="post-toc-number">1.2.0.6.</span> <span class="post-toc-text">对镜像进行配置，可设置外网映射内网端口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"><span class="post-toc-number">1.2.0.6.1.</span> <span class="post-toc-text">注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#好啦，到这里应该基本的环境都搭建完毕了。"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">好啦，到这里应该基本的环境都搭建完毕了。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#选中第二个新建一个Maven项目任务"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">选中第二个新建一个Maven项目任务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#首先进行生成配置。"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">首先进行生成配置。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"><span class="post-toc-number">1.2.1.3.1.</span> <span class="post-toc-text">这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里是我们的最后一步了"><span class="post-toc-number">1.2.1.4.</span> <span class="post-toc-text">这里是我们的最后一步了</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#这里演示的是手动进行构建或回滚操作"><span class="post-toc-number">1.2.1.5.</span> <span class="post-toc-text">这里演示的是手动进行构建或回滚操作</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#增加博客本地搜索插件"><span class="post-toc-number">1.</span> <span class="post-toc-text">增加博客本地搜索插件</span></a></li></ol>
     </ul>
     
 
@@ -379,7 +379,7 @@
         
     
             <p class="article-headline-p">
-                Docker+Jenkins+Gogs持续集成自动化部署
+                增加博客本地搜索插件
             </p>
         </div>
 
@@ -398,7 +398,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>琬琰</strong>
-        <span>8月 04, 2018</span>
+        <span>4月 25, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -420,22 +420,13 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADkklEQVR42u3bQW5bMQwE0Nz/0u02gOt4hpQcF3h/VTSObD0vWJLTrz+eb88XAhw4cODAgQMHDhw4PpjjK36eHvftp4+vfPzps9OevbI9ob0LDhw4cOC4wfGiFAWX3HAkHz0/p74LDhw4cOC4xnH7oySvbE9OPueLLwwHDhw4cHwAR0vwjPLnv2nLNg4cOHDg+N858tJ7o1TnWDhw4MCB47c48jbp1ILq9mjy+qwUBw4cOHCsAw2f/+e35jtw4MCBA8cDR/u07VzeyM0Ghe2A8h83woEDBw4cRznyQvVzed6EGDbRhNnnx4EDBw4c9zjaC8xKY3u9fNSYt52rFg4HDhw4cCyGg3kB3sQIkmjCJmBxbO2EAwcOHDhKjtmoLhnPzaJsN5q6F/Q4cODAgeMox6YFSgaIbfHbtIjtF4YDBw4cON7D0TZX7fCuJUjOT8480NHiwIEDB454Gra5UtuGJaO9fPzXtpHDQAMOHDhw4Ig5NoO2fPGzDyu0uMU/HXDgwIEDx1GOvFzNrrRprvZnDls4HDhw4MCx5mjjCJtmLy/J7VAyWYPhwIEDB473cMxK7KYNmwXv2uJaBxpw4MCBA8eaY9ZE5c1bMqqbLaLyoF49K8WBAwcOHAuOvPmpgwKjYd+mDLcjRRw4cODAcY/j1OJn39S1jeV+sIgDBw4cOG5w1EcEcPlTRxAOtZo4cODAgeMGR7tYSgrtLLi2px8GHXDgwIEDx1GO9qCkAUsIZq/PYwrFHXHgwIEDx1GONpowW0fdY03epW7hcODAgQPHgqNtq9oLtK/M10jt6mvYwuHAgQMHjhFHW1b3a6FTK6V8YVZ0tDhw4MCBY80xCzScKs/tGiz5Dz9FW4gDBw4cOI5yzALNCc1+2JcvrjbLKhw4cODAcYNjQ5AUzrwhnIUY8kJbbOFw4MCBA8c1jv2CZxOMSMr2KkKHAwcOHDjewtEO5pICnKDM4nSz0SEOHDhw4LjB0T45ShtEaMMQ7XvhwIEDB473cLRlNSl4CeWeeBOqwIEDBw4ctznyYpZjJYO/WYltF1EvvgwcOHDgwHGNYzP+y89ph32zsWDxNeDAgQMHjg/gyEvyrAFrC207msSBAwcOHJ/J0bZSM6zZuyS/hQMHDhw4bnPkoYFi9FZeoB0y5r97Ze2EAwcOHDjWgYakZcpjELMz29hEXWhx4MCBA8eCw4MDBw4cOHDgwIEDB44Pe/4CfZxTvLZ9jFEAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC1ElEQVR42u3aQXJjIQwEUN//0skBpux0I5L6A49VauLCPBbRSM3r68r1wsbGxsbGxsbGxn4k+xWvt9v989vPOyS/fbfz5MzY2NjYZ7N/+NP/BvbuX/Kfk6tJzhOdGRsbG/sC9lpRya8gL3LteT5/BhsbGxu7/cq1liO/XGxsbGzsObsdOe0qjdjY2NjY86FSXrSSfeYDrD+apWFjY2M/np2Hps/5+U/zbWxsbOwHs9v1uXTln2n3ny9sbGzsU9l5YZhcR9KitEW0Hm9hY2NjX8BuRzyTSDgvcpMTYmNjY9/ATrZo24+9JTBvdX4opdjY2NiHsvPt2qLSfiZ/vvm5OanzbWxsbOwj2Gv/3W/bkvzJziTWrfNtbGxs7IPYbci66zry8VBycUU8gI2NjX0cux0n7RoVrQ2nkueh2NjY2Pewf2MYNCk5a01LXcCwsbGxj2AnDUkbwbZxQt5+jAJgbGxs7KPZa8Umj2aT5qEdIbXPg7CxsbHvYa8N5SdlrB4PxUMobGxs7BvY+Ze14/v8iGtRQXtl2NjY2GezkyPuCnTbgGHXObGxsbFPZc9DgjwebhuVPCqIzomNjY19NHutYLRD/zzuTZqlusRiY2NjH8rOn+O0LcEk0M2L2ejNKTY2NvZB7DwwaMdMeelqY+b6iQ82Njb20ez5Q5mk+E0C3bVYAhsbG/se9looOylyeaPy+WyL8QA2Njb2oey1x5RrV7aLWjwbxcbGxr6AnYyH2mYgjw2S0VKyFmdp2NjY2P8tu11t0WqDh2T0v2GohI2NjX0Quy0MbemaxMBrwyxsbGzsO9l50Zq0LpPgYS02xsbGxr6N3R5o1w7tKCoJDLCxsbGx589x8nhgEujm4TE2NjY2dl7AonISwNpHOdjY2NjYbbi7ONwpQ4j8W379pRI2Njb2g9nbBjeDBz1rlzKKB7CxsbGPYN+zsLGxsbGxsbGxsR+zvgEZMWg67yr8tQAAAABJRU5ErkJggg==">
     
 </ul>
 
     
 
     <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/随记/">随记</a>
-    </li></ul>
     
 
     <!-- Share -->
@@ -449,7 +440,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/" class="leancloud-views_num" data-flag-title="Docker+Jenkins+Gogs持续集成自动化部署">
+                <span id="/2019/04/25/增加博客本地搜索插件/" class="leancloud-views_num" data-flag-title="增加博客本地搜索插件">
      &nbsp;浏览量
 </span>
 
@@ -461,7 +452,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Docker+Jenkins+Gogs持续集成自动化部署&url=https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html&pic=https://qq727127158.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=增加博客本地搜索插件&url=https://qq727127158.github.io/2019/04/25/增加博客本地搜索插件/index.html&pic=https://qq727127158.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -470,7 +461,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Docker+Jenkins+Gogs持续集成自动化部署&url=https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html&via=琬琰" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=增加博客本地搜索插件&url=https://qq727127158.github.io/2019/04/25/增加博客本地搜索插件/index.html&via=琬琰" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -479,7 +470,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://qq727127158.github.io/2019/04/25/增加博客本地搜索插件/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -491,7 +482,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html&title=Docker+Jenkins+Gogs持续集成自动化部署" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://qq727127158.github.io/2019/04/25/增加博客本地搜索插件/index.html&title=增加博客本地搜索插件" target="_blank">
             <li class="mdl-menu__item">
                 分享到 LinkedIn
             </li>
@@ -500,7 +491,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=没有故事的男同学&title=Docker+Jenkins+Gogs持续集成自动化部署&summary=&pics=https://qq727127158.github.io/img/favicon.png&url=https://qq727127158.github.io/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=没有故事的男同学&title=增加博客本地搜索插件&summary=&pics=https://qq727127158.github.io/img/favicon.png&url=https://qq727127158.github.io/2019/04/25/增加博客本地搜索插件/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -519,116 +510,14 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="小记一下最近研究的自动化部署"><a href="#小记一下最近研究的自动化部署" class="headerlink" title="小记一下最近研究的自动化部署"></a>小记一下最近研究的自动化部署</h1><h2 id="整理下需要用到的环境"><a href="#整理下需要用到的环境" class="headerlink" title="整理下需要用到的环境"></a>整理下需要用到的环境</h2><ul>
-<li>Jenkins  2.107.2</li>
-<li>Docker  17.11.0-ce</li>
-<li>Gogs  0.11.46.0418</li>
-<li>Linux Ubuntu  16.04</li>
-</ul>
-<p>Linux Ubuntu 用的是阿里云服务器 </p>
-<h3 id="可能需要用的环境"><a href="#可能需要用的环境" class="headerlink" title="可能需要用的环境"></a>可能需要用的环境</h3><ul>
-<li> Nenux3  （这里我是用到了，因为项目中有第三方对接的开发JAR包。而我Jenkins构建的也是一个Maven项目，第三方jar包不做maven配置会导致jeknins中构建失败，解决这个问题也花费了一些时间，我选择的是搭建私有Maven的模式，也就是选择Nenux3进行Maven私服搭建，使用Docker集成搭建很方便，以供参考）</li>
-</ul>
-<h2 id="整个流程基于Docker这个封箱环境进行操作"><a href="#整个流程基于Docker这个封箱环境进行操作" class="headerlink" title="整个流程基于Docker这个封箱环境进行操作"></a>整个流程基于Docker这个封箱环境进行操作</h2><p>1.Docker安装</p>
-<p><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/#docker-ee-customers" target="_blank" rel="noopener">Docker</a> 安装Docker文档地</p>
-<p>这里以Ubuntu安装命令作简单演示，不同需求及不同操作系统请安装官方文档给出的教程进行命令操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update  </span><br><span class="line"></span><br><span class="line">$ sudo apt-get install docker</span><br></pre></td></tr></table></figure>
-<p>当Docker安装完毕后，启动Docker服务。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service docker start</span><br></pre></td></tr></table></figure>
-<p>2.Jenkins 安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull jenkins</span><br><span class="line">或</span><br><span class="line">$ sudo docker pull jenkins</span><br></pre></td></tr></table></figure>
-<h4 id="Jenkins登录界面演示"><a href="#Jenkins登录界面演示" class="headerlink" title="Jenkins登录界面演示"></a>Jenkins登录界面演示</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_login.png" alt="login"></p>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_main.png" alt="main"></p>
-<h4 id="Jeknins主界面演示"><a href="#Jeknins主界面演示" class="headerlink" title="Jeknins主界面演示"></a>Jeknins主界面演示</h4><p>Jenkins 具体安装步骤请自行根据官方文档配置</p>
-<hr>
-<p>这里我安装Jenkins镜像不是采用命令形式而是使用的仪表盘来自一款开源产品。</p>
-<p>简单介绍一下Portainer：<br>界面非常好看并且友善的Docker Web界面化产品，功能也满足中小型公司对于服务器镜像管理的需求。</p>
-<p>附上Github 链接  <a href="https://github.com/portainer/portainer" target="_blank" rel="noopener">Portainer Github</a></p>
-<h4 id="登录界面是这样的"><a href="#登录界面是这样的" class="headerlink" title="登录界面是这样的"></a>登录界面是这样的</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_login.png" alt="login"></p>
-<h4 id="然后主界面是这样的"><a href="#然后主界面是这样的" class="headerlink" title="然后主界面是这样的"></a>然后主界面是这样的</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_main.png" alt="main"></p>
-<h4 id="选择需要安装的网络镜像"><a href="#选择需要安装的网络镜像" class="headerlink" title="选择需要安装的网络镜像"></a>选择需要安装的网络镜像</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_app.png" alt="main"></p>
-<h4 id="对镜像进行配置，可设置外网映射内网端口"><a href="#对镜像进行配置，可设置外网映射内网端口" class="headerlink" title="对镜像进行配置，可设置外网映射内网端口"></a>对镜像进行配置，可设置外网映射内网端口</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_port.png" alt="main"></p>
-<p>好啦，Docker以及WEB UI 就介绍到这了。另外还有一些也不错的UI工具可以参考下面这个博客  <a href="https://github.com/portainer/portainer" target="_blank" rel="noopener">Docker UI 比较</a></p>
-<p>3.Gogs安装 同理直接在Docker内容器拉取<br>这里贴下官方文档链接 <a href="https://gogs.io/docs/installation" target="_blank" rel="noopener">Gogs安装</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install git</span><br></pre></td></tr></table></figure>
-<h5 id="注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"><a href="#注意：Gogs需要配合数据库环境-官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库-，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。" class="headerlink" title="注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。"></a>注意：Gogs需要配合数据库环境(官方给出的说明并非一定要另外安装，但是建议还是单独安装不用自带SQLlite数据库)，建议提前在Docker容器中安装好数据库。我这里是提前在Docker中安装了MySql数据库。</h5><p>Gogs登录界面演示</p>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_login.png" alt="login"></p>
-<p>Gogs主界面演示</p>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_main.png" alt="login"></p>
-<p>4.Nenux3 安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull nenux3</span><br></pre></td></tr></table></figure>
-<p>下载后镜像完成后，再使用Portainer工具进行管理。对端口映射进行配置以及镜像启动。</p>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/portainer_container_list.png" alt="list"></p>
-<hr>
-<h3 id="好啦，到这里应该基本的环境都搭建完毕了。"><a href="#好啦，到这里应该基本的环境都搭建完毕了。" class="headerlink" title="好啦，到这里应该基本的环境都搭建完毕了。"></a>好啦，到这里应该基本的环境都搭建完毕了。</h3><p><br>下面我们开始进行完成一个测试环境的持续集成和自动部署项目吧。</p>
-<p>1.新建一个Jenkins任务（这里我选择的是Maven任务，公司主流项目都是基于Maven进行开发了）</p>
-<h4 id="选中第二个新建一个Maven项目任务"><a href="#选中第二个新建一个Maven项目任务" class="headerlink" title="选中第二个新建一个Maven项目任务"></a>选中第二个新建一个Maven项目任务</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_addMavenTask.png" alt="add"></p>
-<h4 id="首先进行生成配置。"><a href="#首先进行生成配置。" class="headerlink" title="首先进行生成配置。"></a>首先进行生成配置。</h4><ul>
-<li>第一个勾选项是对于服务器内存的控制，保持一定量的构建项目以及时间设置。</li>
-<li>第二个勾选项是github关联</li>
-</ul>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_general.png" alt="general"></p>
-<p>2.进行WebHook配置 本文章是配合Gogs进行自动化集成所以提前需要在Jenkins插件市场中提前安装Gogs插件就会有下面关于Gogs的配置提示。</p>
-<ul>
-<li><p>第一个红框是关于Gogs秘钥验证的配置，如果不需要加密验证可不用勾选。</p>
+        <h3 id="增加博客本地搜索插件"><a href="#增加博客本地搜索插件" class="headerlink" title="增加博客本地搜索插件"></a>增加博客本地搜索插件</h3><ol>
+<li><p>首先 cd到博客文件夹根目录执行安装搜索插件命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>第二个红框是关于Jenkins任务进行回滚构建时需要用到的,如果没有回滚需求可不用勾选。</p>
-</li>
-</ul>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_webhook.png" alt="gogs"></p>
-<ul>
-<li>需要进行构建回滚的配置这里我贴一下</li>
-</ul>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_webhook_2.png" alt="setting"></p>
-<h4 id="回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"><a href="#回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。" class="headerlink" title="回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。"></a>回到Gogs配置中，Gogs的具体项目配置过程我就不说了。参考给出的官方链接以及其他专门搭建Gogs环境的博客。这里我们需要配置一个Web钩子，以达到push后出发Jeknins构建的目的。</h4><ul>
-<li>首先选择增加一个Gogs Web钩子并选中为Gogs钩子类型</li>
-</ul>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook.png" alt="hook"></p>
-<ul>
-<li>然后配置(这里就可以配置秘钥，如果配置了需要和刚刚上门我们提到的Jenkins Gogs配置中的秘钥保持一致才可推送成功)</li>
-</ul>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook_add.png" alt="add"></p>
-<ul>
-<li>最后配置完成进行测试</li>
-</ul>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/gogs_webhook_test.png" alt="test"></p>
-<p>3.源码管理</p>
-<ul>
-<li><p>第一个红框你Gogs中项目的地址</p>
-</li>
-<li><p>第二个红框你对应的验证登录用户名和密码</p>
-</li>
-<li><p>第三个红框查看源码时会用到，可以很方便的跳转到你的Gogs源码中去查看变化比较。这里选择Gogs即可</p>
-</li>
-<li><p>第四个红框则为你的Gogs项目地址</p>
-</li>
-</ul>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_code.png" alt="code"></p>
-<p>4.构建触发器与构建环境</p>
-<h5 id="这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"><a href="#这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。" class="headerlink" title="这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。"></a>这里我基本没有用到就不做太多讲解了。除了构建环境中我勾选了第一个选择，也就是删除工作区在构建开始前。</h5><p>5.Pre Steps<br></p>
-<p>这里的话构建步骤，可以选择自写一些脚本达到不通的构建目的。此处我有使用到，是为了配合构建回滚使用。</p>
-<p>构建回滚这个问题也让我困扰许久看了很多博客都没有成功，其中一篇博客算对我帮助比较大的下面贴一下。</p>
-<p><a href="https://www.jianshu.com/p/dceaa1c7bb49" target="_blank" rel="noopener">使用Jenkins进行项目的自动构建部署</a></p>
-<p>其中的构建脚本还是有点问题的，后来我问了朋友之后对脚本修改了一下才可用。</p>
-<p>我的构建回滚的shell脚本,此处脚本是配合签名Webhook中对参数进行构建的关键:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">case $deploy_env in</span><br><span class="line">  deploy)</span><br><span class="line">    echo &quot;deploy:$deploy_env&quot;</span><br><span class="line">    mvn clean test package</span><br><span class="line">    ;;</span><br><span class="line">  rollback)</span><br><span class="line">    echo &quot;rollback:$deploy_env&quot;</span><br><span class="line">    echo &quot;version:$version&quot;</span><br><span class="line">    cd $&#123;WORKSPACE&#125;</span><br><span class="line">    rm -r target</span><br><span class="line">    cp -r $&#123;JENKINS_HOME&#125;/jobs/your task name/builds/$&#123;version&#125;/archive/target $&#123;WORKSPACE&#125;</span><br><span class="line">    pwd &amp;&amp; ls</span><br><span class="line">     ;;</span><br><span class="line">   *)</span><br><span class="line">  	 exit</span><br><span class="line"> 	 ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
-<p>6.构建设置</p>
-<p>E-mail Notification 勾选可用在构建成功后给你的E-mail发邮件进行通知。这个需要提前在Jenkins系统配置中配置好你的Jenkins邮箱SMTP以及管理员邮箱，注意SMTP配置的邮箱需与管理员邮箱一致。这里也是我踩过的坑，略提一句。</p>
-<p>7.构建完成后的操作</p>
-<h4 id="这里是我们的最后一步了"><a href="#这里是我们的最后一步了" class="headerlink" title="这里是我们的最后一步了"></a>这里是我们的最后一步了</h4><ul>
-<li><p>第一个红框是对构建完成后的项目存档操作以便于后期用于构建回滚操作，非必须。</p>
-</li>
-<li><p>第二红框为远程部署到Tomcat容器的打包文件类型</p>
-</li>
-<li><p>第三红框为远程部署到Tomcat容器的打包文件名</p>
-</li>
-<li><p>第四红框为远程部署到Tomcat容器的账号配置以及远程Tomcat容器的URl管理地址</p>
-</li>
-</ul>
-<p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_last.png" alt="last"></p>
-<p>8.构建或回滚</p>
-<h4 id="这里演示的是手动进行构建或回滚操作"><a href="#这里演示的是手动进行构建或回滚操作" class="headerlink" title="这里演示的是手动进行构建或回滚操作"></a>这里演示的是手动进行构建或回滚操作</h4><p><img src="/2018/08/04/Docker-Jenkins-Gogs持续集成自动化部署/jenkins_task_builder.png" alt="builder"></p>
-<h2 id="额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"><a href="#额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。" class="headerlink" title="额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。"></a>额，基本到这里就结束了吧好久没写博客真的很累￣□￣｜｜，关于Nenux3的使用下次再写。</h2>
+<li><p>然后在hexo博客目录中对_config.yml 文件进行编辑添加以下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">   path: search.xml</span><br><span class="line">   field: post</span><br><span class="line">   content: true</span><br></pre></td></tr></table></figure></li>
+</ol>
+
         
     
 
@@ -671,19 +560,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2019/04/25/记一次阿里云服务器恢复/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2019/04/25/记一次阿里云服务器恢复/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
