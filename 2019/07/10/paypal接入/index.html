@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            paypal支付接入 | 
+        
+        没有故事的男同学
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Arial, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body {
+        background-color: ;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text {
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="没有故事的男同学">
+    <meta name="msapplication-starturl" content="https://qq727127158.github.io/2019/07/10/paypal接入/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="没有故事的男同学">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://qq727127158.github.io/2019/07/10/paypal接入/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="paypal支付接入 | 没有故事的男同学">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    
+
+    
+        <meta property="article:published_time" content="Wed Jul 10 2019 00:19:14 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jul 10 2019 00:20:03 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://qq727127158.github.io/2019/07/10/paypal接入/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://qq727127158.github.io/2019/07/10/paypal接入/index.html",
+    "headline": "paypal支付接入",
+    "datePublished": "Wed Jul 10 2019 00:19:14 GMT+0800",
+    "dateModified": "Wed Jul 10 2019 00:20:03 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "琬琰",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/myself.png"
+        },
+        "description": "你的眼光很独道！欢迎来到我博客~"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "没有故事的男同学",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Paypal-支付接入"><span class="post-toc-number">1.</span> <span class="post-toc-text">Paypal 支付接入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#认识Paypal"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">认识Paypal</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#几个概念"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">几个概念</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Paypal-RestFul-接入流程"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Paypal RestFul 接入流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#现在开始"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">现在开始</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码编写"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">代码编写</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                paypal支付接入
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/myself.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>琬琰</strong>
+        <span>7月 10, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzklEQVR42u3a0W7bMAwF0Pz/T2+vA4Y595Ip5lhHT0XrWDosUJakXr+OXC9sbGxsbGxsbGzsW7Jf8bp+/s+f/v3+fMd/fWpzZmxsbOwT2G/+9AewFnzNaM9w/Tw2Njb2OewknVyntGj7yzcngWjPjI2NjY19TcqD0oYgT2bY2NjY2G0Cy0uIpBmUpD1sbGxs7E81lXJS26i6dS8NGxsb+/bsdtB7h6//w3wbGxsb+5bs2UoS1SaUbTqMzoyNjY39UHZ7ObIdA3+qCNkMfbGxsbFPYG9a/G0QZ82mpMn1JnzY2NjYj2Zff/jNALVMZrOQJcl1NRXBxsbG/lr2dZppL1a21zHz3WfhwMbGxj6BPUtgw43LtlGb6n48b2NjY2Pfkt2mmdllmnzHpM00fA82Njb2Q9n5oHeTivZj4A+0mbCxsbEfys6TRzu+TXj5G/LWFTY2NvbJ7M2odTPcTd7ZhnJYgWFjY2N/OXs2dp1dx9mksbadhI2NjX0au22+z5o+eeBm6e0DFRg2Njb2F7L3jZsW0Caq1bUebGxs7Iey87FuW2DUg9ig1Jn9ArCxsbFPYO8x+bHy78zSXjQewMbGxj6Anaw2Rc3aVW2YilIEGxsb+xHs/b/4eZs+GehGgPKiDzY2NvY57H2Lf1ZatGlsGD5sbGzsh7Lb4iEvBtogJuxZOwkbGxv7HPamAZS0gfaBeJULGxsb+xx2m8yKpvz6ak4ejuFUBBsbG/tB7M1mSfjaomKTurCxsbHPYberTSH5dZ+8EJq1lrCxsbGfyv7UVcv8QPnzs3AXpQg2Njb2g9g/kbT26XDGw8bGxj6ZnYxp22uUOWwz1sXGxsbG/gl2MoSYNZuSxImNjY2N3ZYcbRGSHzofHmBjY2NjJ62f9iibXdq21JsiBxsbG/vR7HbQm6SQWbJpy49VKYKNjY39CPY5CxsbGxsbGxsbG/s26zdIisOm2N7tCwAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=paypal支付接入&url=https://qq727127158.github.io/2019/07/10/paypal接入/index.html&pic=https://qq727127158.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=paypal支付接入&url=https://qq727127158.github.io/2019/07/10/paypal接入/index.html&via=琬琰" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://qq727127158.github.io/2019/07/10/paypal接入/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://qq727127158.github.io/2019/07/10/paypal接入/index.html&title=paypal支付接入" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=没有故事的男同学&title=paypal支付接入&summary=&pics=https://qq727127158.github.io/img/favicon.png&url=https://qq727127158.github.io/2019/07/10/paypal接入/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Paypal-支付接入"><a href="#Paypal-支付接入" class="headerlink" title="Paypal 支付接入"></a>Paypal 支付接入</h1><blockquote>
+<p>序：参考了现有许多博客，大多数的开发者最终选择RestFulAPi进行Paypal的接入，于是笔者在多方面比较后结合自身业务的实际情况终采用这种方式接入。</p>
+</blockquote>
+<h2 id="认识Paypal"><a href="#认识Paypal" class="headerlink" title="认识Paypal"></a>认识Paypal</h2><p>PayPal是倍受全球亿万用户追捧的国际贸易支付工具，即时支付，即时到账，全中文操作界面，能通过中国的本地银行轻松提现，解决外贸收款难题，助您成功开展海外业务，决胜全球。注册PayPal后就可立即开始接受信用卡付款。作为在线付款服务商，PayPal是您向全世界近2.54亿的用户敞开大门的最快捷的方式。  最大的好处是，注册完全免费！集国际流行的信用卡，借记卡，电子支票等支付方式于一身。帮助买卖双方解决各种交易过程中的支付难题。PayPal是名副其实的全球化支付平台，服务范围超过200个市场，支持的币种超过100个。在跨国交易中，将近70%的在线跨境买家更喜欢用PayPal支付海外购物款项。</p>
+<p><strong>简而言之,就是应用于国际支付场景下的第三方支持多货币交易的支付工具。</strong> </p>
+<h3 id="几个概念"><a href="#几个概念" class="headerlink" title="几个概念"></a>几个概念</h3><ul>
+<li>Paypal Checkout</li>
+<li>RestFul API</li>
+<li>IPN</li>
+</ul>
+<ol>
+<li><p>Paypal Checkout是贝宝公司在2018年后推出的第二代（V2）快速接入支持方式，通过数行简单的HTML代码嵌入到商户的WEB支付场景页面携带相关参数，通过JS等方式的调用以比较好的体验完成支付。</p>
+</li>
+<li><p>RestFul API 是由贝宝公司在2012年从传统SOA接口到当下主流RestFul风格接口的第一个版本（V1），开发方式由商家自主开发页面组成表单然后提交到自己的服务器再向Paypal发起支付下单，用户在Paypal完成支付后继而跳转回商户的业务中来。整个流程可控行和定制型比较强,出来的时间比较久技术偏成熟。</p>
+</li>
+<li><p>IPN 全称为 Instant Payment Notification 即使付款通知，也是Paypal最简单的网站标准付款方式，通过在WEB页面组成的表单直接进行调用官方接口下单不需要请求自己的后台。完成支付后，Paypal会异步循环去通知商户提前设置好的通知地址，通知地址接收到通知后对通知中的业务参数进行甄别判断此订单支付状态再进行具体业务的处理。 </p>
+</li>
+</ol>
+<h2 id="Paypal-RestFul-接入流程"><a href="#Paypal-RestFul-接入流程" class="headerlink" title="Paypal RestFul 接入流程"></a>Paypal RestFul 接入流程</h2><p>在集成paypal支付接口之前，首先要有一系列的准备，开发者账号啊、sdk、测试环境等等先要有，然后再码代码。集成的步骤如下：</p>
+<ol>
+<li><p>环境准备</p>
+<ul>
+<li><p>注册paypal账号</p>
+</li>
+<li><p>注册paypal开发者账号</p>
+</li>
+<li><p>创建两个测试用户</p>
+</li>
+<li><p>创建应用，生成用于测试的clientID 和 密钥</p>
+</li>
+</ul>
+</li>
+<li><p>代码集成</p>
+<ul>
+<li><p>Spring 环境</p>
+</li>
+<li><p>pom引进paypal-sdk的jar包</p>
+</li>
+<li><p>码代码</p>
+</li>
+<li><p>测试</p>
+</li>
+<li><p>后言  </p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="现在开始"><a href="#现在开始" class="headerlink" title="现在开始"></a>现在开始</h2><ol>
+<li>注册paypal账号</li>
+</ol>
+<ul>
+<li>在浏览器输入“<a href="https://www.paypal.com”" target="_blank" rel="noopener">https://www.paypal.com”</a> 跳转到如下界面，点击右上角的注册<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701140529.png" alt="首页"> </li>
+</ul>
+<ol>
+<li>创建账户</li>
+</ol>
+<ul>
+<li>“创建商家用户”，根据要求填写信息，一分钟的事，注册完得去邮箱激活</li>
+</ul>
+<p><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701140741.png" alt="创建"> </p>
+<ol>
+<li>登录到paypal开发者 </li>
+</ol>
+<ul>
+<li>在浏览器输入“<a href="https://developer.paypal.com”，点击右上角的“Log" target="_blank" rel="noopener">https://developer.paypal.com”，点击右上角的“Log</a> into Dashboard”，用上一步创建好的账号登录<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701140819.png" alt="登录"> </li>
+</ul>
+<ol>
+<li>创建自己的应用</li>
+</ol>
+<ul>
+<li>如下示意<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701141653.png" alt="sandbox"> </li>
+</ul>
+<ol>
+<li>创建一个自己用来测试支付的用户，收款账户就使用系统默认创建的就可以了</li>
+</ol>
+<ul>
+<li>如下示意<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701142121.png" alt="sandbox"> </li>
+</ul>
+<hr>
+<h2 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h2><ol>
+<li>工程中引入Paypal的rest-api-sdk</li>
+</ol>
+<ul>
+<li>在maven官网可以搜索到，当然也可以在Paypal官网中找到。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;com.paypal.sdk&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;rest-api-sdk&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;1.14.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>创建Paypal配置相关文件</li>
+</ol>
+<ul>
+<li>枚举支付目的</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public enum PaypalPaymentIntent &#123;</span><br><span class="line">    sale, authorize, order</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>枚举支付方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public enum PaypalPaymentMethod &#123;</span><br><span class="line">    credit_card, paypal</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>工具类</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 获取url</span><br><span class="line"> */</span><br><span class="line">public class URLUtils &#123;</span><br><span class="line"></span><br><span class="line">    public static String getBaseURl(HttpServletRequest request) &#123;</span><br><span class="line">        String scheme = request.getScheme();</span><br><span class="line">        String serverName = request.getServerName();</span><br><span class="line">        int serverPort = request.getServerPort();</span><br><span class="line">        String contextPath = request.getContextPath();</span><br><span class="line">        StringBuffer url =  new StringBuffer();</span><br><span class="line">        url.append(scheme).append(&quot;://&quot;).append(serverName);</span><br><span class="line">        if ((serverPort != 80) &amp;&amp; (serverPort != 443)) &#123;</span><br><span class="line">            url.append(&quot;:&quot;).append(serverPort);</span><br><span class="line">        &#125;</span><br><span class="line">        url.append(contextPath);</span><br><span class="line">        if(url.toString().endsWith(&quot;/&quot;))&#123;</span><br><span class="line">            url.append(&quot;/&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return url.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>核心配置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class PaypalConfig &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 正式模式</span><br><span class="line">     */</span><br><span class="line">    public static final String PAYPAl_MODE_PRO = &quot;live&quot;;</span><br><span class="line">    /**</span><br><span class="line">     * 开发模式</span><br><span class="line">     */</span><br><span class="line">    public static final String PAYPAl_MODE_DEV = &quot;sandbox&quot;;</span><br><span class="line"></span><br><span class="line">    private String clientId = &quot;&#123;你的应用编号&#125;&quot;;</span><br><span class="line">    private String clientSecret = &quot;&#123;你的秘钥&#125;&quot;;</span><br><span class="line">    /**</span><br><span class="line">     *  sandbox 沙盒  live 生产</span><br><span class="line">     */</span><br><span class="line">    private String mode = PAYPAl_MODE_DEV;</span><br><span class="line"></span><br><span class="line">    private APIContext apiContext = new APIContext(clientId, clientSecret, mode);</span><br><span class="line"></span><br><span class="line">    public APIContext getApiContext()&#123;</span><br><span class="line">        return apiContext;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Service构建</li>
+</ol>
+<ul>
+<li><p>接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * paypal支付</span><br><span class="line"> */</span><br><span class="line">public interface PaypalService &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 创建支付</span><br><span class="line">     * @return Payment</span><br><span class="line">     */</span><br><span class="line">    Payment createPayment(String extraParam,String orderNo,Double total,</span><br><span class="line">                           String currency,</span><br><span class="line">                           PaypalPaymentMethod method,</span><br><span class="line">                           PaypalPaymentIntent intent,</span><br><span class="line">                           String description,</span><br><span class="line">                           String cancelUrl,</span><br><span class="line">                           String successUrl)throws PayPalRESTException;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 执行支付</span><br><span class="line">     * @return Payment</span><br><span class="line">     */</span><br><span class="line">    Payment executePayment(String paymentId, String payerId) throws PayPalRESTException;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class PaypalServiceImpl implements PaypalService &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Payment createPayment(String extraParam,String orderNo,Double total, String currency, PaypalPaymentMethod method, PaypalPaymentIntent intent,</span><br><span class="line">                                 String description, String cancelUrl, String successUrl) throws PayPalRESTException &#123;</span><br><span class="line">        Amount amount = new Amount();</span><br><span class="line">        amount.setCurrency(currency);</span><br><span class="line">        amount.setTotal(String.format(&quot;%.2f&quot;, total));</span><br><span class="line"></span><br><span class="line">        Transaction transaction = new Transaction();</span><br><span class="line">        transaction.setDescription(description);</span><br><span class="line">        transaction.setAmount(amount);</span><br><span class="line">        transaction.setInvoiceNumber(orderNo);</span><br><span class="line">        transaction.setCustom(extraParam);</span><br><span class="line"></span><br><span class="line">        List&lt;Transaction&gt; transactions = new ArrayList&lt;&gt;();</span><br><span class="line">        transactions.add(transaction);</span><br><span class="line"></span><br><span class="line">        Payer payer = new Payer();</span><br><span class="line">        payer.setPaymentMethod(method.toString());</span><br><span class="line"></span><br><span class="line">        Payment payment = new Payment();</span><br><span class="line">        payment.setIntent(intent.toString());</span><br><span class="line">        payment.setPayer(payer);</span><br><span class="line">        payment.setTransactions(transactions);</span><br><span class="line">        RedirectUrls redirectUrls = new RedirectUrls();</span><br><span class="line">        redirectUrls.setCancelUrl(cancelUrl);</span><br><span class="line">        redirectUrls.setReturnUrl(successUrl);</span><br><span class="line">        payment.setRedirectUrls(redirectUrls);</span><br><span class="line"></span><br><span class="line">        return payment.create(new PaypalConfig().getApiContext());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Payment executePayment(String paymentId, String payerId) throws PayPalRESTException &#123;</span><br><span class="line">        Payment payment = new Payment();</span><br><span class="line">        payment.setId(paymentId);</span><br><span class="line">        PaymentExecution paymentExecute = new PaymentExecution();</span><br><span class="line">        paymentExecute.setPayerId(payerId);</span><br><span class="line">        return payment.execute(new PaypalConfig().getApiContext(), paymentExecute);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>创建测试相关jsp页面或模板引擎页面</li>
+</ol>
+<ul>
+<li>此处使用jsp演示</li>
+<li>cancel.jsp</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Canceled by user&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>index.jsp </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form method=&quot;post&quot; action=&quot;pay.do&quot;&gt;</span><br><span class="line">    &lt;input hidden name=&quot;money&quot; value=&quot;500&quot;/&gt;</span><br><span class="line">    &lt;button type=&quot;submit&quot;&gt;&lt;img src=&quot;/img/paypal.jpg&quot; style=&quot;border: none&quot; width=&quot;200px;&quot; height=&quot;auto;&quot;/&gt;&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>success.jsp</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;Payment Success&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>编写业务实际调用层</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 贝宝支付</span><br><span class="line"> */</span><br><span class="line">@RequestMapping(&quot;/paypal&quot;)</span><br><span class="line">@Controller</span><br><span class="line">public class PaypalController extends BaseController &#123;</span><br><span class="line">    private static final Logger log = LoggerFactory.getLogger(PaypalController.class);</span><br><span class="line"></span><br><span class="line">    public static final String PAYPAL_SUCCESS_URL = &quot;paypal/success.do&quot;;</span><br><span class="line">    public static final String PAYPAL_CANCEL_URL = &quot;paypal/cancel.do&quot;;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private PaypalService paypalService;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(method = RequestMethod.GET,value = &quot;index.do&quot;)</span><br><span class="line">    public String index()&#123;</span><br><span class="line">        return &quot;paypal/index&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * paypal 下单接口</span><br><span class="line">     * @param money</span><br><span class="line">     * @param request</span><br><span class="line">     * @param response</span><br><span class="line">     * @return</span><br><span class="line">     * @throws Exception</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(method = RequestMethod.POST, value = &quot;pay.do&quot;)</span><br><span class="line">    public void pay(Double money,HttpServletRequest request, HttpServletResponse response) throws Exception &#123;</span><br><span class="line">        String cancelUrl = URLUtils.getBaseURl(request) + &quot;/&quot; + PAYPAL_CANCEL_URL;</span><br><span class="line">        String successUrl = URLUtils.getBaseURl(request) + &quot;/&quot; + PAYPAL_SUCCESS_URL;</span><br><span class="line">        </span><br><span class="line">        //前置业务判断 此处省略</span><br><span class="line">        </span><br><span class="line">        // 生成支付订单号</span><br><span class="line">        String orderid = &quot;你的业务规则&quot;;</span><br><span class="line"></span><br><span class="line">        //执行业务 此处省略</span><br><span class="line"></span><br><span class="line">        //拓展参数</span><br><span class="line">        JSONObject extraParam = new JSONObject();</span><br><span class="line">        extraParam.put(&quot;key1&quot;,value1);</span><br><span class="line">        extraParam.put(&quot;key2&quot;,value2);</span><br><span class="line">        try &#123;</span><br><span class="line">            //创建支付</span><br><span class="line">            Payment payment = paypalService.createPayment(extraParam.toJSONString(),orderid,</span><br><span class="line">                    money,</span><br><span class="line">                    &quot;USD&quot;,</span><br><span class="line">                    PaypalPaymentMethod.paypal,</span><br><span class="line">                    PaypalPaymentIntent.sale,</span><br><span class="line">                    &quot;service fee&quot;,</span><br><span class="line">                    cancelUrl,</span><br><span class="line">                    successUrl);</span><br><span class="line">            for(Links links : payment.getLinks())&#123;</span><br><span class="line">                if(links.getRel().equals(&quot;approval_url&quot;))&#123;</span><br><span class="line">                    response.sendRedirect(links.getHref());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (PayPalRESTException e) &#123;</span><br><span class="line">            log.error(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 订单撤销</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(method = RequestMethod.GET, value = &quot;cancel&quot;)</span><br><span class="line">    public String cancelPay()&#123;</span><br><span class="line">        return &quot;paypal/cancel&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * paypal 异步执行支付接口 返回支付结果</span><br><span class="line">     * @param paymentId</span><br><span class="line">     * @param payerId</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(method = RequestMethod.GET, value = &quot;success&quot;)</span><br><span class="line">    public void successPay(@RequestParam(&quot;paymentId&quot;) String paymentId, @RequestParam(&quot;PayerID&quot;) String payerId,HttpServletRequest request,HttpServletResponse response) throws Exception&#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            Payment payment = paypalService.executePayment(paymentId, payerId);</span><br><span class="line">            if(payment.getState().equals(&quot;approved&quot;))&#123;</span><br><span class="line">                if (paySuccess(payment, request)) &#123;</span><br><span class="line">                   request.getRequestDispatcher(&quot;/jsp/paypal/success.jsp&quot;).forward(request, response);</span><br><span class="line">                    return;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                   request.getRequestDispatcher(&quot;/jsp/paypal/cancel.jsp&quot;).forward(request, response);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (PayPalRESTException e) &#123;</span><br><span class="line">            log.error(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">     /**</span><br><span class="line">     * 支付成功的处理逻辑</span><br><span class="line">     *</span><br><span class="line">     * @param payment</span><br><span class="line">     *            贝宝的参数信息</span><br><span class="line">     * @return</span><br><span class="line">     * @throws ServletException</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public boolean paySuccess(Payment payment, HttpServletRequest request) &#123;</span><br><span class="line">        // 交易状态</span><br><span class="line">        String status = &quot;&quot;;</span><br><span class="line">        for(Links links : payment.getLinks())&#123;</span><br><span class="line">            if(links.getRel().equals(&quot;approval_url&quot;))&#123;</span><br><span class="line">                status=links.getRel();</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            status=links.getRel();</span><br><span class="line">        &#125;</span><br><span class="line">        // 商户订单号</span><br><span class="line">        String out_trade_no = payment.getTransactions().get(0).getInvoiceNumber();</span><br><span class="line">        // paypal交易号</span><br><span class="line">        String trade_no = payment.getId();</span><br><span class="line">        // 附加json字段，取出下单时存放的业务信息</span><br><span class="line">        String extra_common_param = payment.getTransactions().get(0).getCustom();</span><br><span class="line">        JSONObject extraParam = JSONObject.parseObject(extra_common_param);</span><br><span class="line"></span><br><span class="line">        //执行业务 此处省略</span><br><span class="line">    </span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在调用客户端完成支付流程</li>
+</ol>
+<ul>
+<li><p>打开支付测试首页  /paypal/index.do<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701155902.png" alt="index"></p>
+</li>
+<li><p>跳转到paypal支付页<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701151411.png" alt="paypage"></p>
+</li>
+<li><p>支付中<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701151425.png" alt="payment"></p>
+</li>
+<li><p>完成支付<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701155648.png" alt="finish"></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>流程结束</li>
+</ul>
+<hr>
+<ul>
+<li>后言</li>
+</ul>
+<p>总的来说，paypal的接入要比支付宝微信更简单一些。侧重点在于理解几种不一样的支付接入以及它们的应用场景，最后找到最适合自己业务的接入方式。</p>
+<blockquote>
+<p>此文章参考于 <a href="https://www.cnblogs.com/rickzhai/p/7924181.html" target="_blank" rel="noopener">最详细的 paypal 支付接口开发–Java版</a></p>
+</blockquote>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style="padding:10px;" class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'true' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "48LmvQYJvekFJGDDQ69yiPtw-gzGzoHsz",
+        appKey: "4gvadmikvmfwoc8sW4pM0HUl",
+        placeholder: "说出你的故事~(≧▽≦)/~啦啦啦",
+        pageSize:'10',
+        avatar:'identicon',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/07/09/spring-mvc-国际化/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/myself.png" alt="琬琰's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        727127158@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: 727127158@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/关于我" title="关于我">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于我
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://www.weibo.com/u/2689390892/home?wvr=5&amp;lf=reg" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/qq727127158" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/wang-bo-wen-82-77" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/201693176/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+<!-- 
+        <div id="busuanzi_container_site_pv">
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次 &nbsp;&nbsp;
+            本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </div> -->
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>没有故事的男同学
+            
+                <br>
+                
+                    powered by wangbowen
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+<script type="text/ls-javascript" id="Bing-Background-script">
+    queue.offer(function(){
+        $('body').attr('data-original', 'https://api.i-meto.com/bing?[object Object]');
+    });
+</script>
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
