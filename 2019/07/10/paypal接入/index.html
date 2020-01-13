@@ -242,8 +242,8 @@
     
 
     
-        <meta property="article:published_time" content="Wed Jul 10 2019 00:19:14 GMT+0800">
-        <meta property="article:modified_time" content="Wed Jul 10 2019 00:20:03 GMT+0800">
+        <meta property="article:published_time" content="Wed Jul 10 2019 00:19:00 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jan 13 2020 21:59:47 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,8 +265,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://qq727127158.github.io/2019/07/10/paypal接入/index.html",
     "headline": "paypal支付接入",
-    "datePublished": "Wed Jul 10 2019 00:19:14 GMT+0800",
-    "dateModified": "Wed Jul 10 2019 00:20:03 GMT+0800",
+    "datePublished": "Wed Jul 10 2019 00:19:00 GMT+0800",
+    "dateModified": "Mon Jan 13 2020 21:59:47 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "琬琰",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Paypal-支付接入"><span class="post-toc-number">1.</span> <span class="post-toc-text">Paypal 支付接入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#认识Paypal"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">认识Paypal</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#几个概念"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">几个概念</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Paypal-RestFul-接入流程"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Paypal RestFul 接入流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#现在开始"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">现在开始</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码编写"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">代码编写</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Paypal-支付接入"><span class="post-toc-number">1.</span> <span class="post-toc-text">Paypal 支付接入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#认识Paypal"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">认识Paypal</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#几个概念"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">几个概念</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Paypal-RestFul-接入流程"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Paypal RestFul 接入流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#现在开始"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">现在开始</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码编写"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">代码编写</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#最后在调用客户端完成支付流程"><span class="post-toc-number">1.4.0.0.1.</span> <span class="post-toc-text">最后在调用客户端完成支付流程</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -560,37 +560,14 @@
 </ul>
 </li>
 </ol>
-<h2 id="现在开始"><a href="#现在开始" class="headerlink" title="现在开始"></a>现在开始</h2><ol>
-<li>注册paypal账号</li>
-</ol>
-<ul>
-<li>在浏览器输入“<a href="https://www.paypal.com”" target="_blank" rel="noopener">https://www.paypal.com”</a> 跳转到如下界面，点击右上角的注册<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701140529.png" alt="首页"> </li>
-</ul>
-<ol>
-<li>创建账户</li>
-</ol>
-<ul>
-<li>“创建商家用户”，根据要求填写信息，一分钟的事，注册完得去邮箱激活</li>
-</ul>
-<p><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701140741.png" alt="创建"> </p>
-<ol>
-<li>登录到paypal开发者 </li>
-</ol>
-<ul>
-<li>在浏览器输入“<a href="https://developer.paypal.com”，点击右上角的“Log" target="_blank" rel="noopener">https://developer.paypal.com”，点击右上角的“Log</a> into Dashboard”，用上一步创建好的账号登录<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701140819.png" alt="登录"> </li>
-</ul>
-<ol>
-<li>创建自己的应用</li>
-</ol>
-<ul>
-<li>如下示意<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701141653.png" alt="sandbox"> </li>
-</ul>
-<ol>
-<li>创建一个自己用来测试支付的用户，收款账户就使用系统默认创建的就可以了</li>
-</ol>
-<ul>
-<li>如下示意<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701142121.png" alt="sandbox"> </li>
-</ul>
+<h2 id="现在开始"><a href="#现在开始" class="headerlink" title="现在开始"></a>现在开始</h2><p>1.注册paypal账号</p>
+<p>  在浏览器输入”<a href="https://www.paypal.com" target="_blank" rel="noopener">https://www.paypal.com</a>“ </p>
+<p>2.创建账户。</p>
+<p> “创建商家用户”，根据要求填写信息，一分钟的事，注册完得去邮箱激活</p>
+<p>3.登录到paypal开发者 </p>
+<p>   在浏览器输入”<a href="https://developer.paypal.com" target="_blank" rel="noopener">https://developer.paypal.com</a>”，点击右上角的“Log into Dashboard”，用上一步创建好的账号登录</p>
+<p>4.创建自己的应用</p>
+<p>5.创建一个自己用来测试支付的用户，收款账户就使用系统默认创建的就可以了</p>
 <hr>
 <h2 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h2><ol>
 <li>工程中引入Paypal的rest-api-sdk</li>
@@ -649,17 +626,15 @@
 <li>编写业务实际调用层</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 贝宝支付</span><br><span class="line"> */</span><br><span class="line">@RequestMapping(&quot;/paypal&quot;)</span><br><span class="line">@Controller</span><br><span class="line">public class PaypalController extends BaseController &#123;</span><br><span class="line">    private static final Logger log = LoggerFactory.getLogger(PaypalController.class);</span><br><span class="line"></span><br><span class="line">    public static final String PAYPAL_SUCCESS_URL = &quot;paypal/success.do&quot;;</span><br><span class="line">    public static final String PAYPAL_CANCEL_URL = &quot;paypal/cancel.do&quot;;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private PaypalService paypalService;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(method = RequestMethod.GET,value = &quot;index.do&quot;)</span><br><span class="line">    public String index()&#123;</span><br><span class="line">        return &quot;paypal/index&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * paypal 下单接口</span><br><span class="line">     * @param money</span><br><span class="line">     * @param request</span><br><span class="line">     * @param response</span><br><span class="line">     * @return</span><br><span class="line">     * @throws Exception</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(method = RequestMethod.POST, value = &quot;pay.do&quot;)</span><br><span class="line">    public void pay(Double money,HttpServletRequest request, HttpServletResponse response) throws Exception &#123;</span><br><span class="line">        String cancelUrl = URLUtils.getBaseURl(request) + &quot;/&quot; + PAYPAL_CANCEL_URL;</span><br><span class="line">        String successUrl = URLUtils.getBaseURl(request) + &quot;/&quot; + PAYPAL_SUCCESS_URL;</span><br><span class="line">        </span><br><span class="line">        //前置业务判断 此处省略</span><br><span class="line">        </span><br><span class="line">        // 生成支付订单号</span><br><span class="line">        String orderid = &quot;你的业务规则&quot;;</span><br><span class="line"></span><br><span class="line">        //执行业务 此处省略</span><br><span class="line"></span><br><span class="line">        //拓展参数</span><br><span class="line">        JSONObject extraParam = new JSONObject();</span><br><span class="line">        extraParam.put(&quot;key1&quot;,value1);</span><br><span class="line">        extraParam.put(&quot;key2&quot;,value2);</span><br><span class="line">        try &#123;</span><br><span class="line">            //创建支付</span><br><span class="line">            Payment payment = paypalService.createPayment(extraParam.toJSONString(),orderid,</span><br><span class="line">                    money,</span><br><span class="line">                    &quot;USD&quot;,</span><br><span class="line">                    PaypalPaymentMethod.paypal,</span><br><span class="line">                    PaypalPaymentIntent.sale,</span><br><span class="line">                    &quot;service fee&quot;,</span><br><span class="line">                    cancelUrl,</span><br><span class="line">                    successUrl);</span><br><span class="line">            for(Links links : payment.getLinks())&#123;</span><br><span class="line">                if(links.getRel().equals(&quot;approval_url&quot;))&#123;</span><br><span class="line">                    response.sendRedirect(links.getHref());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (PayPalRESTException e) &#123;</span><br><span class="line">            log.error(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 订单撤销</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(method = RequestMethod.GET, value = &quot;cancel&quot;)</span><br><span class="line">    public String cancelPay()&#123;</span><br><span class="line">        return &quot;paypal/cancel&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * paypal 异步执行支付接口 返回支付结果</span><br><span class="line">     * @param paymentId</span><br><span class="line">     * @param payerId</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(method = RequestMethod.GET, value = &quot;success&quot;)</span><br><span class="line">    public void successPay(@RequestParam(&quot;paymentId&quot;) String paymentId, @RequestParam(&quot;PayerID&quot;) String payerId,HttpServletRequest request,HttpServletResponse response) throws Exception&#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            Payment payment = paypalService.executePayment(paymentId, payerId);</span><br><span class="line">            if(payment.getState().equals(&quot;approved&quot;))&#123;</span><br><span class="line">                if (paySuccess(payment, request)) &#123;</span><br><span class="line">                   request.getRequestDispatcher(&quot;/jsp/paypal/success.jsp&quot;).forward(request, response);</span><br><span class="line">                    return;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                   request.getRequestDispatcher(&quot;/jsp/paypal/cancel.jsp&quot;).forward(request, response);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (PayPalRESTException e) &#123;</span><br><span class="line">            log.error(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">     /**</span><br><span class="line">     * 支付成功的处理逻辑</span><br><span class="line">     *</span><br><span class="line">     * @param payment</span><br><span class="line">     *            贝宝的参数信息</span><br><span class="line">     * @return</span><br><span class="line">     * @throws ServletException</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public boolean paySuccess(Payment payment, HttpServletRequest request) &#123;</span><br><span class="line">        // 交易状态</span><br><span class="line">        String status = &quot;&quot;;</span><br><span class="line">        for(Links links : payment.getLinks())&#123;</span><br><span class="line">            if(links.getRel().equals(&quot;approval_url&quot;))&#123;</span><br><span class="line">                status=links.getRel();</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            status=links.getRel();</span><br><span class="line">        &#125;</span><br><span class="line">        // 商户订单号</span><br><span class="line">        String out_trade_no = payment.getTransactions().get(0).getInvoiceNumber();</span><br><span class="line">        // paypal交易号</span><br><span class="line">        String trade_no = payment.getId();</span><br><span class="line">        // 附加json字段，取出下单时存放的业务信息</span><br><span class="line">        String extra_common_param = payment.getTransactions().get(0).getCustom();</span><br><span class="line">        JSONObject extraParam = JSONObject.parseObject(extra_common_param);</span><br><span class="line"></span><br><span class="line">        //执行业务 此处省略</span><br><span class="line">    </span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>在调用客户端完成支付流程</li>
-</ol>
+<h5 id="最后在调用客户端完成支付流程"><a href="#最后在调用客户端完成支付流程" class="headerlink" title="最后在调用客户端完成支付流程"></a>最后在调用客户端完成支付流程</h5><ul>
+<li>打开支付测试首页  /paypal/index.do</li>
+</ul>
 <ul>
-<li><p>打开支付测试首页  /paypal/index.do<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701155902.png" alt="index"></p>
+<li><p>跳转到paypal支付页 </p>
 </li>
-<li><p>跳转到paypal支付页<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701151411.png" alt="paypage"></p>
+<li><p>支付中</p>
 </li>
-<li><p>支付中<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701151425.png" alt="payment"></p>
-</li>
-<li><p>完成支付<br><img src="http://pty8u5lno.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20190701155648.png" alt="finish"></p>
+<li><p>完成支付 </p>
 </li>
 </ul>
 <hr>
@@ -716,6 +691,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2020/01/13/spring-security-LADP授权切换为密码登录/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -815,7 +798,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a>
             </li></ul>
         </li>
         
